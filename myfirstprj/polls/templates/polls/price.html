@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>나이는 {{price}}입니다.</h1>
+	{% if price >= 65 %}
+		<h1>노인 요금제입니다.</h1>
+	{% elif price >= 20 %}
+		<h1>성인 요금제입니다.</h1>
+	{% elif price >= 8 %}
+		<h1>청소년 요금제입니다.</h1>
+	{% elif price >= 0 %}
+		<h1>어린이 요금제입니다.</h1>
+	{% endif %}
+</body>
+</html>

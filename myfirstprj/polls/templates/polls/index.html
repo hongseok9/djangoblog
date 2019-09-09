@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>answer</title>
+</head>
+<body>
+	{% if latest_question_list %}
+		<ul>
+			{% for question in latest_question_list %}
+				<li>
+				<!-- polls:detail 패턴은 가변 숫자를 받기 때문에
+				가변 숫자 자리에 어떤 자료를 넣어줄지 결정해야함 -->
+					<a href="{% url 'polls:detail' question.id %}">
+						{{question.question_text}}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No polls are available.</p>
+	{% endif %}
+</body>
+</html>

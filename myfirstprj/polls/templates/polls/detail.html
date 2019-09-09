@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>{{question.question_text}}</h1>
+	<!-- 현재 가져온 question과 연계된 choice의 항목 전체 -->
+	<form action="{% url 'polls:vote' question.id %}" method="post">
+		<!-- post방식으로 보낼때 암호화방식으로 보내게 도와주는 것 -->
+		{% csrf_token %} 
+		{% for choice in question.choice_set.all %}
+			<!-- forloop.counter는 1부터 한 바퀴마다 1씩 자동 증가하는 변수 -->
+			<input type="radio" name="choice" 
+			id="choice{{forloop.counter}}" value="{{choice.id}}">
+			<label for="choice{{forloop.counter}}">
+				{{choice.choice_text}}
+			</label><br>
+		{% endfor %}
+			<input type="submit" value="투표하기">
+	</form>
+</body>
+</html>

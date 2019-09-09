@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>bmi지수</title>
+</head>
+<body>
+	<h1>키와 몸무게에 따른 bmi지수</h1>
+	<table border="1" width="500">
+		<tr>
+			<td>키</td>
+			<td>몸무게</td>
+			<td>bmi지수</td>
+		</tr>
+		<tr>
+			<td>{{height}}m</td>
+			<td>{{weight}}kg</td>
+			<td>{{bmi}}</td>
+		</tr>
+	</table>
+	<a href = "{% url 'polls:index' %}">
+	메인으로 돌아가기</a><br>
+</body>
+</html>

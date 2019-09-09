@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h1>1등 번호 : 
+	{% for i in lottonum %}
+		{{i}}
+	{% endfor %}</h1>
+		
+	<h1>2등 보너스 번호 : {{lotto}}</h1><br>
+	<a href = "{% url 'namespace:index' %}">메인페이지</a><br>
+	<a href = "{% url 'namespace:lotto' %}">재추첨</a><br>
+
+</body>
+</html>

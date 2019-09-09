@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="{% url 'polls:get' %}" method="post">
+	{% csrf_token %}
+		문자 1 : <input type="text" name="str1"><br>
+		문자 2 : <input type="text" name="str2"><br>
+		<input type="submit" value="제출">
+	
+	</form>
+</body>
+</html>
